@@ -1,0 +1,798 @@
+pcall(function()
+   game("Workspace")["Troll upgrader"]["Fruit punch"].Handle:Destroy()
+end)
+if game:GetService("CoreGui"):FindFirstChild("ChoosingGui") then
+    game:GetService("CoreGui"):FindFirstChild("ChoosingGui"):Destroy()
+end
+
+local ChoosingGui = Instance.new("ScreenGui")
+local ChoosingFrame = Instance.new("Frame")
+local ChoosingFrame2 = Instance.new("Frame")
+local CloseGui = Instance.new("TextButton")
+local TeleportGui = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local Frame2 = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel2 = Instance.new("TextLabel")
+local KillGui = Instance.new("TextButton")
+local Mini = Instance.new("TextButton")
+local AutoPickItems = Instance.new("TextButton")
+local AutoCraftItems = Instance.new("TextButton")
+local AutoCraftItemsSetting = Instance.new("TextButton")
+local AutoCraftItemsDelay = Instance.new("TextBox")
+local AutoTeleportToItems = Instance.new("TextButton")
+local DeleteTrees = Instance.new("TextButton")
+local GotoSafePlace = Instance.new("TextButton")
+local Fix = Instance.new("TextButton")
+local Next = Instance.new("TextButton")
+local Back = Instance.new("TextButton")
+local Page = Instance.new("TextLabel")
+local ShiftLock = Instance.new("TextButton")
+local TeleportTool = Instance.new("TextButton")
+local FlyGuiV3 = Instance.new("TextButton")
+local GotoFillWaterCup = Instance.new("TextButton")
+local GotoKiBank = Instance.new("TextButton")
+local GotoTradeCenter = Instance.new("TextButton")
+local GotoUselessHole = Instance.new("TextButton")
+local GotoCraftSuperCup = Instance.new("TextButton")
+local GotoHeartyPool = Instance.new("TextButton")
+local ServerHop = Instance.new("TextButton")
+local Rejoin = Instance.new("TextButton")
+local Part = Instance.new("Part")
+
+ChoosingGui.Name = "ChoosingGui"
+ChoosingGui.Parent = game.CoreGui
+
+ChoosingFrame.Name = "ChoosingFrame"
+ChoosingFrame.Parent = ChoosingGui
+ChoosingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ChoosingFrame.BackgroundTransparency = .5
+ChoosingFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ChoosingFrame.BorderSizePixel = 2
+ChoosingFrame.Position = UDim2.new(0, 100, 0, 100)
+ChoosingFrame.Size = UDim2.new(0, 215, 0, 30)
+ChoosingFrame.Active = true
+ChoosingFrame.Draggable = true
+ChoosingFrame.Visible = true
+
+TextLabel2.Name = "TextLabel2"
+TextLabel2.Parent = ChoosingFrame
+TextLabel2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.Text = "Choosing Version"
+TextLabel2.TextScaled = true
+TextLabel2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.BackgroundTransparency = 1
+TextLabel2.Position = UDim2.new(0, 0, 0, 0)
+TextLabel2.Size = UDim2.new(0, 215, 0, 30)
+TextLabel2.Active = false
+
+ChoosingFrame2.Name = "ChoosingFrame2"
+ChoosingFrame2.Parent = ChoosingFrame
+ChoosingFrame2.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+ChoosingFrame2.BackgroundTransparency = .5
+ChoosingFrame2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ChoosingFrame2.BorderSizePixel = 2
+ChoosingFrame2.Position = UDim2.new(0, 0, 0, 32)
+ChoosingFrame2.Size = UDim2.new(0, 250, 0, 100)
+ChoosingFrame2.Active = false
+ChoosingFrame2.Draggable = false
+ChoosingFrame2.Visible = true
+
+CloseGui.Name = "CloseGui"
+CloseGui.Parent = ChoosingFrame
+CloseGui.Size = UDim2.new(0, 30, 0, 30)
+CloseGui.Position = UDim2.new(0, 220, 0, 0)
+CloseGui.Text = "X"
+CloseGui.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseGui.BorderSizePixel = 2
+CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseGui.TextScaled = true
+CloseGui.TextSize = 20
+CloseGui.Visible = true
+CloseGui.BackgroundTransparency = .5
+CloseGui.MouseButton1Click:Connect(function()
+	ChoosingGui:Destroy()
+end)
+
+TeleportGui.Name = "TeleportGui"
+TeleportGui.Parent = ChoosingFrame2
+TeleportGui.Size = UDim2.new(0, 75, 0, 50)
+TeleportGui.Position = UDim2.new(0, 150, 0, 25)
+TeleportGui.Text = "Teleport Version"
+TeleportGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TeleportGui.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TeleportGui.BorderSizePixel = 2
+TeleportGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportGui.TextScaled = true
+TeleportGui.TextSize = 20
+TeleportGui.Visible = true
+TeleportGui.BackgroundTransparency = .5
+TeleportGui.MouseButton1Click:Connect(function()
+	ChoosingFrame.Visible = false
+	Frame.Visible = true
+	AutoTeleportToItems.Visible = true
+	AutoTeleportToItems.Visible = true
+end)
+
+Frame.Name = "Frame"
+Frame.Parent = ChoosingGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = .5
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 2
+Frame.Position = UDim2.new(0, 100, 0, 100)
+Frame.Size = UDim2.new(0, 150, 0, 25)
+Frame.Active = true
+Frame.Draggable = true
+Frame.Visible = false
+
+Frame2.Name = "Frame2"
+Frame2.Parent = Frame
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+Frame2.BackgroundTransparency = .5
+Frame2.BorderColor3 = Color3.fromRGB(0, 255, 0)
+Frame2.BorderSizePixel = 2
+Frame2.Position = UDim2.new(0, 0, 0, 30)
+Frame2.Size = UDim2.new(0, 150, 0, 185)
+Frame2.Active = false
+Frame2.Draggable = false
+Frame2.Visible = true
+
+TextLabel.Name = "TextLabel"
+TextLabel.Parent = Frame
+TextLabel.Size = UDim2.new(0, 100, 0, 25)
+TextLabel.Position = UDim2.new(0, 25, 0, 0)
+TextLabel.Text = "翔子汉化"
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20
+TextLabel.Visible = true
+TextLabel.TextScaled = true
+TextLabel.BackgroundTransparency = 1
+
+KillGui.Name = "击杀菜单"
+KillGui.Parent = Frame
+KillGui.Size = UDim2.new(0, 25, 0, 25)
+KillGui.Position = UDim2.new(0, 0, 0, 0)
+KillGui.Text = "X"
+KillGui.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+KillGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+KillGui.TextScaled = true
+KillGui.TextSize = 20
+KillGui.Visible = true
+KillGui.BackgroundTransparency = .6
+KillGui.MouseButton1Click:Connect(function()
+	ChoosingFrame.Visible = true
+	Frame.Visible = false
+	BringItems.Visible = false
+	AutoBringItems.Visible = false
+	AutoTeleportToItems.Visible = false
+end)
+
+Mini.Name = "Mini"
+Mini.Parent = Frame
+Mini.Size = UDim2.new(0, 25, 0, 25)
+Mini.Position = UDim2.new(0, 125, 0, 0)
+Mini.Text = "-"
+Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mini.TextColor3 = Color3.fromRGB(0, 0, 0)
+Mini.TextScaled = false
+Mini.TextSize = 27.5
+Mini.Visible = true
+Mini.BackgroundTransparency = .6
+Mini.MouseButton1Click:Connect(function()
+	if Mini.Text == "-" then
+		Mini.Text = "+"
+		Frame2.Visible = false
+	elseif Mini.Text == "+" then
+		Mini.Text = "-"
+		Frame2.Visible = true
+	end
+end)
+
+Part.Name = "Safe Path"
+Part.Parent = Workspace
+Part.Anchored = true
+Part.Size = Vector3.new(1000,20,1000)
+Part.CFrame = CFrame.new(1,99975,1)
+
+AutoPickItems.Name = "自动拾取杯子"
+AutoPickItems.Parent = Frame2
+AutoPickItems.Size = UDim2.new(0, 125, 0, 25)
+AutoPickItems.Position = UDim2.new(0, 12.5, 0, 50)
+AutoPickItems.Text = "Auto Pick Items (Off)"
+AutoPickItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoPickItems.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoPickItems.TextScaled = true
+AutoPickItems.TextSize = 20
+AutoPickItems.Visible = true
+AutoPickItems.BackgroundTransparency = .5
+AutoPickItems.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AutoPickItems.BorderSizePixel = 2
+AutoPickItems.MouseButton1Click:Connect(function()
+	if AutoPickItems.Text == "Auto Pick Items (Off)" then
+		AutoPickItems.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		AutoPickItems.Text = "Auto Pick Items (On)"
+		_G.Pick = true
+		while _G.Pick == true do wait()
+			pcall(function()
+				for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+					if v:IsA("Tool") and v:FindFirstChild("Handle") and v.Handle:FindFirstChildOfClass("ProximityPrompt") then
+						fireproximityprompt(v.Handle:FindFirstChildOfClass("ProximityPrompt"))
+					end
+				end
+			end)
+		end
+	else
+		if AutoPickItems.Text == "Auto Pick Items (On)" then
+			AutoPickItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			AutoPickItems.Text = "Auto Pick Items (Off)"
+			wait(.1)
+			_G.Pick = false
+		end
+	end
+end)
+
+AutoCraftItems.Name = "AutoCraftItems"
+AutoCraftItems.Parent = Frame2
+AutoCraftItems.Size = UDim2.new(0, 96, 0, 25)
+AutoCraftItems.Position = UDim2.new(0, 12.5, 0, 87.5)
+AutoCraftItems.Text = "Auto Craft (Off)"
+AutoCraftItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoCraftItems.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoCraftItems.TextScaled = true
+AutoCraftItems.TextSize = 20
+AutoCraftItems.Visible = true
+AutoCraftItems.BackgroundTransparency = .5
+AutoCraftItems.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AutoCraftItems.BorderSizePixel = 2
+AutoCraftItems.MouseButton1Click:Connect(function()
+	if AutoCraftItems.Text == "Auto Craft (Off)" then
+		AutoCraftItems.Text = "Auto Craft (On)"
+		AutoCraftItems.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+		    Title = "Ayo!",
+		    Text = "Go near anvil to craft!1!1!1!1!11!",
+		     Duration = 10})
+		_G.Craft = true
+		while _G.Craft == true do wait(AutoCraftItemsDelay.Text)
+			for i,v in pairs(game:GetService("Workspace")["The J"]:GetDescendants()) do
+				if v:IsA("ProximityPrompt") then
+					fireproximityprompt(v)
+				end
+			end
+		end
+	elseif AutoCraftItems.Text == "Auto Craft (On)" then
+		AutoCraftItems.Text = "Auto Craft (Off)"
+		AutoCraftItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		_G.Craft = false
+	end
+end)
+
+AutoCraftItemsSetting.Name = "AutoCraftItemsSetting"
+AutoCraftItemsSetting.Parent = AutoCraftItems
+AutoCraftItemsSetting.Size = UDim2.new(0, 25, 0, 25)
+AutoCraftItemsSetting.Position = UDim2.new(0, 100, 0, 0)
+AutoCraftItemsSetting.Text = "⚙️"
+AutoCraftItemsSetting.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AutoCraftItemsSetting.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AutoCraftItemsSetting.BorderSizePixel = 2
+AutoCraftItemsSetting.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoCraftItemsSetting.TextScaled = true
+AutoCraftItemsSetting.TextSize = 20
+AutoCraftItemsSetting.Visible = true
+AutoCraftItemsSetting.BackgroundTransparency = .5
+AutoCraftItemsSetting.MouseButton1Click:Connect(function()
+	if AutoCraftItemsSetting.BackgroundColor3 == Color3.fromRGB(0, 0, 0) then
+		AutoCraftItemsSetting.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		AutoCraftItemsDelay.Visible = true
+	elseif AutoCraftItemsSetting.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then
+		AutoCraftItemsSetting.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		AutoCraftItemsDelay.Visible = false
+	end
+end)
+
+AutoCraftItemsDelay.Name = "AutoCraftItemsDelay"
+AutoCraftItemsDelay.Parent = AutoCraftItems
+AutoCraftItemsDelay.Size = UDim2.new(0, 50, 0, 25)
+AutoCraftItemsDelay.Position = UDim2.new(0, 140.5, 0, 0)
+AutoCraftItemsDelay.Text = "1"
+AutoCraftItemsDelay.ClearTextOnFocus = true
+AutoCraftItemsDelay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoCraftItemsDelay.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoCraftItemsDelay.BorderSizePixel = 2
+AutoCraftItemsDelay.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoCraftItemsDelay.TextSize = 20
+AutoCraftItemsDelay.Visible = false
+AutoCraftItemsDelay.TextScaled = true
+AutoCraftItemsDelay.BackgroundTransparency = .5
+AutoCraftItemsDelay.PlaceholderText = "Craft Delay"
+AutoCraftItemsDelay.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+
+AutoTeleportToItems.Name = "AutoTeleportToItems"
+AutoTeleportToItems.Parent = Frame2
+AutoTeleportToItems.Size = UDim2.new(0, 125, 0, 25)
+AutoTeleportToItems.Position = UDim2.new(0, 12.5, 0, 12.5)
+AutoTeleportToItems.Text = "Auto Teleport To Items (Off)"
+AutoTeleportToItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoTeleportToItems.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoTeleportToItems.TextScaled = true
+AutoTeleportToItems.TextSize = 20
+AutoTeleportToItems.Visible = false
+AutoTeleportToItems.BackgroundTransparency = .5
+AutoTeleportToItems.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AutoTeleportToItems.BorderSizePixel = 2
+AutoTeleportToItems.MouseButton1Click:Connect(function()
+	if AutoTeleportToItems.Text == "Auto Teleport To Items (Off)" then
+		AutoTeleportToItems.Text = "Auto Teleport To Items (On)"
+		AutoTeleportToItems.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		_G.Teleport = false
+		spawn(function()
+			repeat wait()
+				pcall(function()
+					Cup = game:GetService("Workspace"):FindFirstChildOfClass("Tool")
+					if Cup and Cup:IsA("Tool") and Cup:FindFirstChild("Handle") and Cup.Handle:FindFirstChildOfClass("ProximityPrompt") and Cup.Name ~= "empty cup" then
+						OldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+						for i = 1, 3 do
+							pcall(function()
+								Han = Cup:FindFirstChild("Handle")
+								Pos = Han.Position
+								Pro = Han:FindFirstChildOfClass("ProximityPrompt")
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Pos.X, Pos.Y, Pos.Z)
+								wait(.15)
+								fireproximityprompt(Pro)
+							end)
+						end
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldCFrame
+					end
+				end)
+			until _G.Teleport == true
+		end)
+	elseif AutoTeleportToItems.Text == "Auto Teleport To Items (On)" then
+		AutoTeleportToItems.Text = "Auto Teleport To Items (Off)"
+		AutoTeleportToItems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		_G.Teleport = true
+	end
+end)
+
+DeleteTrees.Name = "DeleteTrees"
+DeleteTrees.Parent = Frame2
+DeleteTrees.Size = UDim2.new(0, 125, 0, 25)
+DeleteTrees.Position = UDim2.new(0, 12.5, 0, 87.5)
+DeleteTrees.Text = "Delete Trees"
+DeleteTrees.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DeleteTrees.TextColor3 = Color3.fromRGB(255, 255, 255)
+DeleteTrees.TextScaled = true
+DeleteTrees.TextSize = 20
+DeleteTrees.Visible = false
+DeleteTrees.BackgroundTransparency = .5
+DeleteTrees.BorderColor3 = Color3.fromRGB(255, 255, 255)
+DeleteTrees.BorderSizePixel = 2
+DeleteTrees.MouseButton1Click:Connect(function()
+	game:GetService("Workspace")["The J"].Trees:Destroy()
+end)
+
+GotoSafePlace.Name = "GotoSafePlace"
+GotoSafePlace.Parent = Frame2
+GotoSafePlace.Size = UDim2.new(0, 125, 0, 25)
+GotoSafePlace.Position = UDim2.new(0, 12.5, 0, 125)
+GotoSafePlace.Text = "Teleport To SafePlace"
+GotoSafePlace.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoSafePlace.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoSafePlace.BorderSizePixel = 2
+GotoSafePlace.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoSafePlace.TextScaled = true
+GotoSafePlace.TextSize = 20
+GotoSafePlace.Visible = true
+GotoSafePlace.BackgroundTransparency = .5
+GotoSafePlace.MouseButton1Click:Connect(function()
+	if GotoSafePlace.Text == "Teleport To SafePlace" then
+		GotoSafePlace.Text = "Return"
+		GotoSafePlace.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		for i,v in pairs(Workspace:GetDescendants()) do
+			if v.Name == "WayPointPart" then
+				v:Destroy()
+			end
+		end
+		local WayPointPart = Instance.new("Part")
+		WayPointPart.Name = "WayPointPart"
+		WayPointPart.Parent = Workspace
+		WayPointPart.Size = Vector3.new(1, 1, 1)
+		WayPointPart.Transparency = 1
+		WayPointPart.Anchored = true
+		WayPointPart.CanCollide = false
+		WayPointPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1,100000,1)
+	elseif GotoSafePlace.Text == "Return" then
+		GotoSafePlace.Text = "Teleport To SafePlace"
+		GotoSafePlace.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		wait(.1)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.WayPointPart.CFrame
+	end
+end)
+
+Fix.Name = "Fix"
+Fix.Parent = Frame2
+Fix.Size = UDim2.new(0, 125, 0, 25)
+Fix.Position = UDim2.new(0, 12.5, 0, 125)
+Fix.Text = "Fix : Safe Place"
+Fix.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Fix.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Fix.BorderSizePixel = 2
+Fix.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fix.TextScaled = true
+Fix.TextSize = 20
+Fix.Visible = false
+Fix.BackgroundTransparency = .5
+Fix.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-261, 10, 236)
+end)
+
+Page.Name = "Page"
+Page.Parent = Frame2
+Page.Size = UDim2.new(0, 25, 0, 25)
+Page.Position = UDim2.new(0, 96, 0, 160)
+Page.Text = "1"
+Page.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Page.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Page.BorderSizePixel = 2
+Page.TextColor3 = Color3.fromRGB(255, 255, 255)
+Page.TextSize = 20
+Page.Visible = true
+Page.TextScaled = true
+Page.BackgroundTransparency = .5
+
+Next.Name = "Next"
+Next.Parent = Page
+Next.Size = UDim2.new(0, 25, 0, 25)
+Next.Position = UDim2.new(0, 29, 0, 0)
+Next.Text = ">"
+Next.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Next.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Next.BorderSizePixel = 2
+Next.TextColor3 = Color3.fromRGB(255, 255, 255)
+Next.TextScaled = true
+Next.TextSize = 20
+Next.Visible = true
+Next.BackgroundTransparency = .5
+Next.MouseButton1Click:Connect(function()
+	if Page.Text == "1" then
+		Page.Text = "2"
+		Back.Visible = true
+		GotoSafePlace.Visible = false
+		AutoCraftItems.Visible = false
+		AutoTeleportToItems.Visible = false
+		AutoTeleportToItems.Visible = false
+		AutoPickItems.Visible = false
+		GotoCraftSuperCup.Visible = true
+		GotoHeartyPool.Visible = true
+		TeleportTool.Visible = true
+		ShiftLock.Visible = true
+	elseif Page.Text == "2" then
+		Page.Text = "3"
+		TeleportTool.Visible = false
+		FlyGuiV3.Visible = false
+		ShiftLock.Visible = false
+		GotoFillWaterCup.Visible = true
+		GotoKiBank.Visible = true
+		GotoTradeCenter.Visible = true
+		GotoUselessHole.Visible = true
+		GotoCraftSuperCup.Visible = false
+		GotoHeartyPool.Visible = false
+		elseif Page.Text == "3" then
+		Page.Text = "4"
+		Page.Position = UDim2.new(0, 125, 0, 160)
+		Next.Visible = false
+		GotoFillWaterCup.Visible = false
+		GotoKiBank.Visible = false
+		GotoTradeCenter.Visible = false
+		GotoUselessHole.Visible = false
+		DeleteTrees.Visible = true
+		ServerHop.Visible = true
+		Rejoin.Visible = true 
+		Fix.Visible = true
+	end
+end)
+
+Back.Name = "Back"
+Back.Parent = Page
+Back.Size = UDim2.new(0, 25, 0, 25)
+Back.Position = UDim2.new(0, -29, 0, 0)
+Back.Text = "<"
+Back.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Back.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Back.BorderSizePixel = 2
+Back.TextColor3 = Color3.fromRGB(255, 255, 255)
+Back.TextScaled = true
+Back.TextSize = 20
+Back.Visible = false
+Back.BackgroundTransparency = .5
+Back.MouseButton1Click:Connect(function()
+	if Page.Text == "2" then
+		Page.Text = "1"
+		Back.Visible = false
+		GotoSafePlace.Visible = true
+		AutoTeleportToItems.Visible = true
+		AutoCraftItems.Visible = true
+		AutoPickItems.Visible = true
+		FlyGuiV3.Visible = false
+		ShiftLock.Visible = false
+		TeleportTool.Visible = false
+		GotoCraftSuperCup.Visible = false
+		GotoHeartyPool.Visible = false
+		GotoSafePlace.Visible = true
+	elseif Page.Text == "3" then
+		Page.Text = "2"
+		GotoSafePlace.Visible = false
+		DeleteTrees.Visible = false
+		ShiftLock.Visible = true
+		TeleportTool.Visible = true
+		GotoUselessHole.Visible = false
+		GotoFillWaterCup.Visible = false
+		GotoKiBank.Visible = false
+		GotoTradeCenter.Visible = false
+		GotoCraftSuperCup.Visible = true
+		GotoHeartyPool.Visible = true
+		ServerHop.Visible = false
+		Rejoin.Visible = false
+		elseif Page.Text == "4" then
+		Page.Text = "3"
+		Page.Position = UDim2.new(0, 96, 0, 160)
+		Next.Visible = true
+		GotoFillWaterCup.Visible = true
+		GotoKiBank.Visible = true
+		GotoTradeCenter.Visible = true
+		GotoUselessHole.Visible = true
+		ServerHop.Visible = false
+		Rejoin.Visible = false 
+		DeleteTrees.Visible = false
+		Fix.Visible = false
+	end
+end)
+
+ShiftLock.Name = "ShiftLock"
+ShiftLock.Parent = Frame2
+ShiftLock.Size = UDim2.new(0, 125, 0, 25)
+ShiftLock.Position = UDim2.new(0, 12.5, 0, 50)
+ShiftLock.Text = "ShiftLock"
+ShiftLock.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ShiftLock.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ShiftLock.BorderSizePixel = 2
+ShiftLock.TextColor3 = Color3.fromRGB(255, 255, 255)
+ShiftLock.TextScaled = true
+ShiftLock.TextSize = 20
+ShiftLock.Visible = false
+ShiftLock.BackgroundTransparency = .5
+ShiftLock.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/RdZPWGN1"))()
+end)
+
+TeleportTool.Name = "TeleportTool"
+TeleportTool.Parent = Frame2
+TeleportTool.Size = UDim2.new(0, 125, 0, 25)
+TeleportTool.Position = UDim2.new(0, 12.5, 0, 12.5)
+TeleportTool.Text = "TeleportTool"
+TeleportTool.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TeleportTool.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TeleportTool.BorderSizePixel = 2
+TeleportTool.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportTool.TextScaled = true
+TeleportTool.TextSize = 20
+TeleportTool.Visible = false
+TeleportTool.BackgroundTransparency = .5
+TeleportTool.MouseButton1Click:Connect(function()
+	for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if v.Name == "Teleport Tool (Click To Teleport)" then
+			v:Destroy()
+		end
+	end
+	mouse = game.Players.LocalPlayer:GetMouse()
+	tool = Instance.new("Tool")
+	tool.RequiresHandle = false
+	tool.Name = "Teleport Tool (Click To Teleport)"
+	tool.Activated:connect(function()
+		local pos = mouse.Hit+Vector3.new(0,2.5,0)
+		pos = CFrame.new(pos.X,pos.Y,pos.Z)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+	end)
+	tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+GotoHeartyPool.Name = "GotoHeartyPool"
+GotoHeartyPool.Parent = Frame2
+GotoHeartyPool.Size = UDim2.new(0, 125, 0, 25)
+GotoHeartyPool.Position = UDim2.new(0, 12.5, 0, 125)
+GotoHeartyPool.Text = "Goto Hearty Pool"
+GotoHeartyPool.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoHeartyPool.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoHeartyPool.BorderSizePixel = 2
+GotoHeartyPool.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoHeartyPool.TextScaled = true
+GotoHeartyPool.TextSize = 20
+GotoHeartyPool.Visible = false
+GotoHeartyPool.BackgroundTransparency = .5
+GotoHeartyPool.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5183, 34, 50)
+end)
+
+GotoFillWaterCup.Name = "GotoFillWaterCup"
+GotoFillWaterCup.Parent = Frame2
+GotoFillWaterCup.Size = UDim2.new(0, 125, 0, 25)
+GotoFillWaterCup.Position = UDim2.new(0, 12.5, 0, 12.5)
+GotoFillWaterCup.Text = "Goto Fill Water Cup"
+GotoFillWaterCup.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoFillWaterCup.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoFillWaterCup.BorderSizePixel = 2
+GotoFillWaterCup.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoFillWaterCup.TextScaled = true
+GotoFillWaterCup.TextSize = 20
+GotoFillWaterCup.Visible = false
+GotoFillWaterCup.BackgroundTransparency = .5
+GotoFillWaterCup.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5099, 30, 30)
+end)
+
+GotoKiBank.Name = "GotoKiBank"
+GotoKiBank.Parent = Frame2
+GotoKiBank.Size = UDim2.new(0, 125, 0, 25)
+GotoKiBank.Position = UDim2.new(0, 12.5, 0, 87.5)
+GotoKiBank.Text = "Goto Ki Bank"
+GotoKiBank.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoKiBank.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoKiBank.BorderSizePixel = 2
+GotoKiBank.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoKiBank.TextScaled = true
+GotoKiBank.TextSize = 20
+GotoKiBank.Visible = false
+GotoKiBank.BackgroundTransparency = .5
+GotoKiBank.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-298, 32, -82)
+end)
+
+GotoTradeCenter.Name = "GotoTradeCenter"
+GotoTradeCenter.Parent = Frame2
+GotoTradeCenter.Size = UDim2.new(0, 125, 0, 25)
+GotoTradeCenter.Position = UDim2.new(0, 12.5, 0, 125)
+GotoTradeCenter.Text = "Goto Trade Center"
+GotoTradeCenter.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoTradeCenter.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoTradeCenter.BorderSizePixel = 2
+GotoTradeCenter.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoTradeCenter.TextScaled = true
+GotoTradeCenter.TextSize = 20
+GotoTradeCenter.Visible = false
+GotoTradeCenter.BackgroundTransparency = .5
+GotoTradeCenter.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-340, 7, 462)
+end)
+
+GotoUselessHole.Name = "GotoUselessHole"
+GotoUselessHole.Parent = Frame2
+GotoUselessHole.Size = UDim2.new(0, 125, 0, 25)
+GotoUselessHole.Position = UDim2.new(0, 12.5, 0, 50)
+GotoUselessHole.Text = "Goto Useless Hole"
+GotoUselessHole.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoUselessHole.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoUselessHole.BorderSizePixel = 2
+GotoUselessHole.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoUselessHole.TextScaled = true
+GotoUselessHole.TextSize = 20
+GotoUselessHole.Visible = false
+GotoUselessHole.BackgroundTransparency = .5
+GotoUselessHole.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-221, 6, -226)
+end)
+
+GotoCraftSuperCup.Name = "GotoCraftSuperCup"
+GotoCraftSuperCup.Parent = Frame2
+GotoCraftSuperCup.Size = UDim2.new(0, 125, 0, 25)
+GotoCraftSuperCup.Position = UDim2.new(0, 12.5, 0, 87.5)
+GotoCraftSuperCup.Text = "Goto Craft Super Cup"
+GotoCraftSuperCup.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GotoCraftSuperCup.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GotoCraftSuperCup.BorderSizePixel = 2
+GotoCraftSuperCup.TextColor3 = Color3.fromRGB(255, 255, 255)
+GotoCraftSuperCup.TextScaled = true
+GotoCraftSuperCup.TextSize = 20
+GotoCraftSuperCup.Visible = false
+GotoCraftSuperCup.BackgroundTransparency = .5
+GotoCraftSuperCup.MouseButton1Click:Connect(function()
+	for i,v in pairs(Workspace:GetDescendants()) do
+		if v.Name == "PartOilMan" then
+			v:Destroy()
+		end
+	end
+	local PartOilMan = Instance.new("Part")
+	PartOilMan.Name = "PartOilMan"
+	PartOilMan.Parent = Workspace
+	PartOilMan.Size = Vector3.new(250, 1, 250)
+	PartOilMan.Transparency = .8
+	PartOilMan.Anchored = true
+	PartOilMan.CFrame = CFrame.new(5126, 43, -16)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5126, 49, -16)
+end)
+
+ServerHop.Name = "ServerHop"
+ServerHop.Parent = Frame2
+ServerHop.Size = UDim2.new(0, 125, 0, 25)
+ServerHop.Position = UDim2.new(0, 12.5, 0, 12.5)
+ServerHop.Text = "ServerHop"
+ServerHop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ServerHop.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ServerHop.BorderSizePixel = 2
+ServerHop.TextColor3 = Color3.fromRGB(255, 255, 255)
+ServerHop.TextScaled = true
+ServerHop.TextSize = 20
+ServerHop.Visible = false
+ServerHop.BackgroundTransparency = .5
+ServerHop.MouseButton1Click:Connect(function()
+	if ServerHop.Text == "ServerHop" then
+		ServerHop.Text = "Are You Sure?"
+		ServerHop.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		wait(3)
+		ServerHop.Text = "ServerHop"
+		ServerHop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	else
+		if ServerHop.Text == "Are You Sure?" then
+			ServerHop.Text = "Please Wait..."
+			ServerHop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			local x = {}
+				for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+					if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+						x[#x + 1] = v.id
+					end
+				end
+			if #x > 0 then
+				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+			else
+				ServerHop.Text = "Couldn't Find Server"
+				wait(3)
+				ServerHop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+				ServerHop.Text = "ServerHop"
+			end
+		end
+	end
+end)
+
+Rejoin.Name = "Rejoin"
+Rejoin.Parent = Frame2
+Rejoin.Size = UDim2.new(0, 125, 0, 25)
+Rejoin.Position = UDim2.new(0, 12.5, 0, 50)
+Rejoin.Text = "Rejoin"
+Rejoin.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Rejoin.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Rejoin.BorderSizePixel = 2
+Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rejoin.TextScaled = true
+Rejoin.TextSize = 20
+Rejoin.Visible = false
+Rejoin.BackgroundTransparency = .5
+Rejoin.MouseButton1Click:Connect(function()
+	if Rejoin.Text == "Rejoin" then
+		Rejoin.Text = "Are You Sure?"
+		Rejoin.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		wait(3)
+		Rejoin.Text = "Rejoin"
+		Rejoin.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	else
+		if Rejoin.Text == "Are You Sure?" then
+			Rejoin.Text = "Please Wait..."
+			Rejoin.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			game:GetService("TeleportService"):Teleport(game.PlaceId)
+		end
+	end
+end)
+
+spawn(function()
+	while true do wait(1) --- Delete Glitch Cups
+		for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+			if v.Name == "delicous!!" or v.Name == "Ticking." then
+				v:Destroy()
+			end
+		end
+	end
+end)
+
+game:GetService("Workspace")["The J"]["Oil-man's lake"].Darkness.Telebort:Destroy()
+game:GetService("Workspace")["Troll upgrader"]["Fruit punch"].Handle:Destroy()
